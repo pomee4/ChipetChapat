@@ -22,9 +22,9 @@ Feladatok:
  - Screen play a videóhoz => hogyan dolgozunk együtt téma
  - PAD doksi kitöltése => Mindenkinek feltölteni
  - PPT tartalom:
- - ráfordított idő csapattagonként
- - milyen nehézségeket kellett megugrani
- - program működési elve (folyamat leírás)
- - program működése képekkel
- - a látható eredmények ismertetése
- - források megjelölése (korábbi chatben)
+    - ráfordított idő csapattagonként
+    - milyen nehézségeket kellett megugrani
+    - program működési elve (folyamat leírás)
+    - program működése képekkel
+    - a látható eredmények ismertetése
+    - források megjelölése (korábbi chatben)
