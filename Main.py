@@ -1,0 +1,1 @@
+#Main.py - Ez a program fog elindulni előszor a program futásakor.
