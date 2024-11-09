@@ -28,3 +28,19 @@ Feladatok:
     - program működése képekkel
     - a látható eredmények ismertetése
     - források megjelölése (korábbi chatben)
+      
+...................................................
+
+KSH adatbázisok /csv/:
+
+6.1.1.7. A háztartások végső energiafelhasználása felhasználási célok szerint
+https://www.ksh.hu/stadat_files/ene/hu/ene0007.html
+
+1.2.1.3. Fogyasztóiár-indexek a kiadások részletes csoportjai szerint, havonta
+https://www.ksh.hu/stadat_files/ara/hu/ara0041.html
+
+20.2.2.9. A teljes munkaidőben alkalmazásban állók bruttó átlagkeresete a munkáltató székhelyének elhelyezkedése alapján, vármegye és régió szerint, negyedévente kumulált
+https://www.ksh.hu/stadat_files/mun/hu/mun0206.html
+
+
+
