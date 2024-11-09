@@ -1,4 +1,5 @@
 Verzió 1.0 - 2024.11.09.
+
 Program funkciói:
  - letölti a KSH-ról a csv file-t
  - struktúrálja az adatokat (adatbázis)
@@ -16,6 +17,7 @@ Program funkciói:
    (https://realpython.com/linear-regression-in-python/) => kód példa
    
 ...................................................
+
 Feladatok:
  - Screen play a videóhoz => hogyan dolgozunk együtt téma
  - PAD doksi kitöltése => Mindenkinek feltölteni
