@@ -10,6 +10,7 @@ Program funkciói:
  - Lineáris regresszió izé:
    
    (https://learn.microsoft.com/hu-hu/shows/machine-learning-for-beginners/your-first-linear-regression-project-in-python-machine-learning-for-beginners)
+   
    (https://www.w3schools.com/python/python_ml_linear_regression.asp) => kód példa
    (https://realpython.com/linear-regression-in-python/) => kód példa
    
