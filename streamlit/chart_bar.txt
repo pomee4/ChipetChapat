@@ -1,0 +1,5 @@
+Mappában futtatva:
+streamlit run SourceCode/chart_bar.py
+
+Gyökérben futtatva:
+streamlit run chart_bar.py

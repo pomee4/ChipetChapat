@@ -1,0 +1,5 @@
+Mappában futtatva:
+streamlit run SourceCode/chart_linear_regression.py
+
+Gyökérben futtatva:
+streamlit run chart_linear_regression.py

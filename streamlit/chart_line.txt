@@ -1,0 +1,5 @@
+Mappanévvel:
+streamlit run SourceCode/chart_line.py
+
+Gyökérben futtatva:
+streamlit run chart_line.py
