@@ -2,6 +2,7 @@ import subprocess
 import sys
 import os
 import pkg_resources
+import webbrowser
 
 # Szükséges csomagok telepítése csak ha még nincsenek telepítve
 requirements_path = os.path.join(os.path.dirname(__file__), 'requirements.txt')
@@ -65,9 +66,14 @@ app = Flask(__name__, static_folder='app/static', template_folder='app/static/te
 # Route-ok betöltése a routes.py-ből
 routes.register(app)
 
+#A weboldal automatikus megnyitása
+webbrowser.open('http://localhost:5000', new=2)  # Open in new tab
+
 # Flask alkalmazás futtatása
 if __name__ == '__main__':
     app.run()
+
+
 
 
 
