@@ -26,13 +26,12 @@ if os.path.exists(requirements_path):
 else:
     print("A requirements.txt nem található.")
 
-
-
-# Modulok importálása
+# Csomagok importálása
 import requests
 import yaml
-import flask
+from flask import Flask
 import matplotlib
+from app import routes  # A route-ok importálása az app könyvtárból
 
 # Forrás URL-ek beolvasása
 with open('forrasok.yaml', 'r') as file:
@@ -41,7 +40,7 @@ with open('forrasok.yaml', 'r') as file:
 # Save path definiálása
 save_path = 'raw_data'
 
-# URL-ek beolvasása és CSV-k letöltése
+#CSV-k letöltése
 for entry in data['forras']:
     file_id = entry['id']
     url = entry['url']
@@ -55,9 +54,20 @@ for entry in data['forras']:
         with open(filename, 'wb') as file:
             file.write(response.content)
 
-        # Sikeres letöltés esetén üzenet kiírása
+        # Letöltés után siker- / hibaüzenet kiírása
         print(f"{filename} letöltve")
     except requests.exceptions.RequestException as e:
         print(f"Hiba történt a {filename} letöltésekor: {e}")
+
+# Flask alkalmazás inicializálása, beállítva a static és templates mappákat
+app = Flask(__name__, static_folder='app/static', template_folder='app/static/templates')
+
+# Route-ok betöltése a routes.py-ből
+routes.register(app)
+
+# Flask alkalmazás futtatása
+if __name__ == '__main__':
+    app.run()
+
 
 
