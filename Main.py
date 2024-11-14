@@ -1,9 +1,36 @@
+import subprocess
+import sys
+import os
+import pkg_resources
+
+# Szükséges csomagok telepítése csak ha még nincsenek telepítve
+requirements_path = os.path.join(os.path.dirname(__file__), 'requirements.txt')
+if os.path.exists(requirements_path):
+    print("requirements.txt megtalálva. Csomagok telepítése...")
+
+    # Szükséges csomagok beolvasása a requirements.txt-ből
+    with open(requirements_path, 'r') as file:
+        packages = file.read().splitlines()
+
+    # Jelenleg telepített csomagok lekérdezése
+    installed_packages = {pkg.key for pkg in pkg_resources.working_set}
+
+    # Filter out packages that are already installed
+    missing_packages = [pkg for pkg in packages if pkg.lower().split("==")[0] not in installed_packages]
+
+    if missing_packages:
+        print(f"Hiányzó csomagok telepítése: {', '.join(missing_packages)}")
+        subprocess.check_call([sys.executable, "-m", "pip", "install", *missing_packages])
+    else:
+        print("Minden szükséges csomag telepítve van.")
+else:
+    print("A requirements.txt nem található.")
+
+
+
 # Modulok importálása
-import sqlite3
-import csv
 import requests
 import yaml
-import os
 import flask
 import matplotlib
 
@@ -28,8 +55,9 @@ for entry in data['forras']:
         with open(filename, 'wb') as file:
             file.write(response.content)
 
-
-        print("{filename} letöltve")
+        # Sikeres letöltés esetén üzenet kiírása
+        print(f"{filename} letöltve")
     except requests.exceptions.RequestException as e:
-        print("Hiba a letöltésben innen: {url}.")
+        print(f"Hiba történt a {filename} letöltésekor: {e}")
+
 
