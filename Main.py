@@ -4,6 +4,8 @@ import csv
 import requests
 import yaml
 import os
+import flask
+import matplotlib
 
 # Forrás URL-ek beolvasása
 with open('forrasok.yaml', 'r') as file:
@@ -30,3 +32,4 @@ for entry in data['forras']:
         print("{filename} letöltve")
     except requests.exceptions.RequestException as e:
         print("Hiba a letöltésben innen: {url}.")
+
