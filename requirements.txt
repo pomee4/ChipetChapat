@@ -2,3 +2,5 @@ requests
 PyYAML
 flask
 matplotlib
+pandas
+scikit-learn

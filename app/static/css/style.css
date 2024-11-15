@@ -25,15 +25,16 @@ main {
 }
 
 button {
-    background-color: #4CAF50;
+    background-color: black;
     color: white;
-    border: none;
+    text-align: center;
+    display: inline-block;
     padding: 10px 20px;
     cursor: pointer;
-    font-size: 16px;
-    border-radius: 5px;
+    font-size: 24px;
+    border-radius: 10px;
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: grey;
 }

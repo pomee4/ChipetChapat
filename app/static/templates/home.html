@@ -4,18 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Főoldal</title>
-    <!-- CSS fájl betöltése -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
     <header>
-        <h1>Üdvözöllek a főoldalon!</h1>
+        <h1>Chipet-Chapat projekt munka v1.0</h1>
     </header>
     <main>
-        <p>Ez egy egyszerű Flask alkalmazás főoldala.</p>
-        <button onclick="greetUser()">Kattints rám</button>
+        <p>Üdvözölünk a projektünkben!</p>
+        <br>
+        <h2>Csapattagok:</h2>
+        <p>Balogh Léna - ECTPM2</p>
+        <p>Kiss G. Ervin - H9ETGN</p>
+        <p>Kovács Tamás - IYWXUK</p>
+        <button onclick="goToForm1()">Következő olda</button>
     </main>
-    <!-- JavaScript fájl betöltése -->
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 </body>
 </html>
