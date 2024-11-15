@@ -18,6 +18,85 @@ def register(app):
     def home():
         return render_template('home.html')
 
+    @app.route('/form1')
+    def form1():
+        # Az első form tartalma
+        return '''
+            <style>
+                a:link, a:visited {
+                    background-color: black;
+                    color: white;
+                    padding: 10px 20px;
+                    font-size: 24px;
+                    text-align: center;
+                    text-decoration: none;
+                    display: inline-block;
+                    border-radius: 10px;
+                }
+                a:hover, a:active {
+                    background-color: grey;
+                }
+            </style>
+            <h1>Első Form</h1>
+            <img src="/static/images/intro_1.png" alt="Intro 1 kép"width="500" height="500">
+            <p>Ez az első oldal tartalma...</p>
+            <a href="/form2">Következő oldal</a>
+        '''
+
+    @app.route('/form2')
+    def form2():
+        # A második form tartalma
+        return '''
+            <style>
+                a:link, a:visited {
+                    background-color: black;
+                    color: white;
+                    padding: 10px 20px;
+                    font-size: 24px;
+                    text-align: center;
+                    text-decoration: none;
+                    display: inline-block;
+                    border-radius: 10px;
+                }
+                a:hover, a:active {
+                    background-color: grey;
+                }
+            </style>
+            <h1>Második Form</h1>
+            <img src="/static/images/intro_2.png" alt="Intro 2 kép">
+            <p>Ez a második oldal tartalma...</p>
+            <a href="/form3">Következő oldal</a>
+        '''
+
+    @app.route('/form3')
+    def form3():
+        # A harmadik form tartalma
+        return '''
+            <style>
+                a:link, a:visited {
+                    background-color: black;
+                    color: white;
+                    padding: 10px 20px;
+                    font-size: 24px;
+                    text-align: center;
+                    text-decoration: none;
+                    display: inline-block;
+                    border-radius: 10px;
+                }
+                a:hover, a:active {
+                    background-color: grey;
+                }
+            </style>
+            <h1>Harmadik Form</h1>
+            <div style="position: absolute; top: 24%; left: 23%; transform: translate(-50%, -50%); width: 150px; text-align: center; font-family: Arial, sans-serif; padding: 10px; border-radius: 10px;">
+                <p style="font-size: 18px; margin: 0; color:black;">Nézünk fogyasztási adatokat?</p>
+            </div>
+            <img src="/static/images/intro_3.png" alt="Intro 3 kép">
+            <p>Ez a harmadik oldal tartalma...</p>
+            <!--<a href="/jump_form">Következő oldal</a>-->
+            <a href="/form4">Következő oldal</a>
+        '''
+
     # Form route for charts
     @app.route('/form4')
     def form4():
@@ -71,7 +150,7 @@ def register(app):
         plt.close(fig)
         return '''
             <h1>Oszlop diagram</h1>
-            <img src="/app/static/images/bar_chart.png" alt="Oszlop diagram">
+            <img src="/static/images/bar_chart.png" alt="Oszlop diagram">
             <a href="/form4">Vissza</a>
         '''
 
@@ -95,6 +174,6 @@ def register(app):
         plt.close(fig)
         return '''
             <h1>Lineáris regresszió</h1>
-            <img src="/app/static/images/regression_chart.png" alt="Lineáris regresszió diagram">
+            <img src="/static/images/regression_chart.png" alt="Lineáris regresszió diagram">
             <a href="/form4">Vissza</a>
         '''
