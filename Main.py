@@ -31,7 +31,6 @@ else:
 import requests
 import yaml
 from flask import Flask
-import matplotlib
 from app import routes  # A route-ok importálása az app könyvtárból
 
 # Forrás URL-ek beolvasása
