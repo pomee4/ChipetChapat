@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Harmadik Form</title>
+</head>
+<body>
+    <h1>Harmadik Form</h1>
+    <div style="position: absolute; top: 24%; left: 23%; transform: translate(-50%, -50%); width: 150px; text-align: center; font-family: Arial, sans-serif; padding: 10px; border-radius: 10px;">
+        <p style="font-size: 18px; margin: 0; color:black;">Nézünk fogyasztási adatokat?</p>
+    </div>
+    <img src="{{ url_for('static', filename='images/intro_3.png') }}" alt="Intro 3 kép">
+    <p>Ez a harmadik oldal tartalma...</p>
+    <a href="{{ url_for('form4') }}">Következő oldal</a>
+</body>
+</html>

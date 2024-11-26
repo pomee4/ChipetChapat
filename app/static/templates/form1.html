@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Első Form</title>
+</head>
+<body>
+    <h1>Első Form</h1>
+    <img src="{{ url_for('static', filename='images/intro_1.png') }}" alt="Intro 1 kép" width="500" height="500">
+    <p>Ez az első oldal tartalma...</p>
+    <a href="{{ url_for('form2') }}">Következő oldal</a>
+</body>
+</html>
