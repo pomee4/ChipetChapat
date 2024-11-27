@@ -25,10 +25,8 @@ def create_bar_chart():
     plt.close(fig)
 
 def create_regression_chart():
-    output_path = 'app/static/images/regression_chart.png'
     generate_regression_chart_data_and_plot(
         data=osszekapcsolt_adatok,
         x_col=osszekapcsolt_adatok.columns[-2],  # Energiafogyasztás column
         y_col=osszekapcsolt_adatok.columns[-1],  # Gyümölcstermelés column
-        output_path=output_path
     )

@@ -59,14 +59,14 @@ def generate_regression_chart_data_and_plot(data, x_col, y_col, output_path):
     # Előrejelzések kiszámítása
     y_pred = model.predict(x_data)
 
-    # Create the plot
+    # Diagram létrehozása
     fig, ax = plt.subplots(figsize=(12, 8))
     ax.scatter(x_data, y_data, color='blue', s=100, label='Original Data', alpha=0.6, edgecolors='w', linewidth=0.5)
     for i in range(len(data)):
         ax.text(x_data[i], y_data[i], data["Régió"].iloc[i], fontsize=10, color='black', ha='right')
     ax.plot(x_data, y_pred, color='red', label='Linear Regression', linewidth=2)
 
-    # Set title and labels with increased font size
+    # Diagram formázása
     ax.set_title('Relationship between Energy Consumption and Fruit Production', fontsize=16, fontweight='bold')
     ax.set_xlabel('Average Energy Consumption (kWh)', fontsize=14)
     ax.set_ylabel('Average Fruit Production (tons)', fontsize=14)
@@ -77,7 +77,7 @@ def generate_regression_chart_data_and_plot(data, x_col, y_col, output_path):
     fig.savefig(output_path)
     plt.close(fig)
 
-# Save the regression chart
+# Regressziós diagram generálása és mentése
 diagram_path = os.path.join('app', 'static', 'images', 'regression_chart.png')
 generate_regression_chart_data_and_plot(
     data=osszekapcsolt_adatok,
