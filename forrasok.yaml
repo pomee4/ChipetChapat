@@ -1,9 +1,9 @@
 forras:
-  - id: "6117"
-    url: "https://www.ksh.hu/stadat_files/ene/hu/ene0007.csv"
+  - id: "kor0048"
+    url: "https://www.ksh.hu/stadat_files/kor/hu/kor0048.csv"
 
-  - id: "1213"
-    url: "https://www.ksh.hu/stadat_files/ara/hu/ara0041.csv"
+  - id: "kor0068"
+    url: "https://www.ksh.hu/stadat_files/kor/hu/kor0068.csv"
 
-  - id: "20229"
-    url: "https://www.ksh.hu/stadat_files/mun/hu/mun0206.csv"
+  - id: "mez0086"
+    url: "https://www.ksh.hu/stadat_files/mez/hu/mez0086.csv"

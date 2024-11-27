@@ -1,7 +1,7 @@
 from flask import render_template
 from app.chart_utils import create_line_chart, create_bar_chart, create_regression_chart
 
-# Register the routes
+# Rout-ok regisztrálása
 def register(app):
     # Home route
     @app.route('/')

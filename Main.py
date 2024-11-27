@@ -31,15 +31,16 @@ else:
 import requests
 import yaml
 from flask import Flask
-from app import routes  # A route-ok importálása az app könyvtárból
 
 # Forrás URL-ek beolvasása
+print("Forrás URL-ek beolvasása...")
 with open('forrasok.yaml', 'r') as file:
     data = yaml.safe_load(file)
 
 # Save path definiálása
 save_path = 'raw_data'
 
+print("CSV fájlok letöltése...")
 #CSV-k letöltése
 for entry in data['forras']:
     file_id = entry['id']
@@ -59,14 +60,17 @@ for entry in data['forras']:
     except requests.exceptions.RequestException as e:
         print(f"Hiba történt a {filename} letöltésekor: {e}")
 
+print("CSV fájlok letöltése kész.")
+
+from app import routes  # A route-ok importálása az app könyvtárból
 # Flask alkalmazás inicializálása, beállítva a static és templates mappákat
 app = Flask(__name__, static_folder='app/static', template_folder='app/static/templates')
-
+print("Flask alkalmazás inicializálva.")
 # Route-ok betöltése a routes.py-ből
 routes.register(app)
 
 #A weboldal automatikus megnyitása
-webbrowser.open('http://localhost:5000', new=2)  # Open in new tab
+webbrowser.open('http://localhost:5000', new=2)  # Megnyitás új tabon
 
 # Flask alkalmazás futtatása
 if __name__ == '__main__':

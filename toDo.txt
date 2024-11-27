@@ -1,0 +1,4 @@
+Gombok linkek helyett
+Form 3 törlése
+CSV beolvasás
+Chartok frissítése a valós szövegekkel, adatokkal
