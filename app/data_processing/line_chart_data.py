@@ -25,19 +25,19 @@ def get_line_chart_data():
     fig, ax1 = plt.subplots(figsize=(12, 6))
 
     # A bal y-tengelyen a villamosenergia-felhasználás
-    ax1.plot(years, electric_data, label='Electric Usage', color='blue', marker='o')
-    ax1.set_xlabel('Year')
-    ax1.set_ylabel('Electric Usage (kWh)', color='blue')
+    ax1.plot(years, electric_data, label='Áram használat', color='blue', marker='o')
+    ax1.set_xlabel('Év')
+    ax1.set_ylabel('Áram használat (kWh)', color='blue')
     ax1.tick_params(axis='y', labelcolor='blue')
 
     # A jobb y-tengelyen a gázfelhasználás
     ax2 = ax1.twinx()
-    ax2.plot(years, gas_data, label='Gas Usage', color='red', marker='x')
-    ax2.set_ylabel('Gas Usage (m³)', color='red')
+    ax2.plot(years, gas_data, label='Gáz használat', color='red', marker='x')
+    ax2.set_ylabel('Gáz használat (m³)', color='red')
     ax2.tick_params(axis='y', labelcolor='red')
 
     # Címkék hozzáadása
-    plt.title("Budapest's Energy Usage Over the Years")
+    plt.title("Budapest háztartási fogyasztójára jutó havi átlagos gáz- és villamosenergia-felhasználás")
     plt.grid(True)
 
     # A diagram mentése

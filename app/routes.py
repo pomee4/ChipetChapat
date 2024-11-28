@@ -20,10 +20,6 @@ def register(app):
     def form3():
         return render_template('form3.html')
 
-    @app.route('/form4')
-    def form4():
-        return render_template('form4.html')
-
     @app.route('/line_chart')
     def line_chart():
         create_line_chart()

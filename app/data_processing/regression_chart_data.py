@@ -1,7 +1,6 @@
 # A megadott struktúra igazítása a kért diagramhoz és használati esethez
 import pandas as pd
 import matplotlib.pyplot as plt
-import matplotlib.ticker as ticker
 import os
 import numpy as np  # Új import a LOG megjelenítéshez
 from sklearn.linear_model import LinearRegression
