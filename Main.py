@@ -5,23 +5,23 @@ import pkg_resources
 import webbrowser
 
 # Szükséges csomagok telepítése csak ha még nincsenek telepítve
-requirements_path = os.path.join(os.path.dirname(__file__), 'requirements.txt')
-if os.path.exists(requirements_path):
+requirements_utvonal = os.path.join(os.path.dirname(__file__), 'requirements.txt')
+if os.path.exists(requirements_utvonal):
     print("requirements.txt megtalálva. Csomagok telepítése...")
 
     # Szükséges csomagok beolvasása a requirements.txt-ből
-    with open(requirements_path, 'r') as file:
-        packages = file.read().splitlines()
+    with open(requirements_utvonal, 'r') as file:
+        csomagok = file.read().splitlines()
 
     # Jelenleg telepített csomagok lekérdezése
-    installed_packages = {pkg.key for pkg in pkg_resources.working_set}
+    telepitett_csomagok = {pkg.key for pkg in pkg_resources.working_set}
 
-    # Filter out packages that are already installed
-    missing_packages = [pkg for pkg in packages if pkg.lower().split("==")[0] not in installed_packages]
+    # Hiányzó csomagok kiválogatása
+    hianyzo_csomagok = [pkg for pkg in csomagok if pkg.lower().split("==")[0] not in telepitett_csomagok]
 
-    if missing_packages:
-        print(f"Hiányzó csomagok telepítése: {', '.join(missing_packages)}")
-        subprocess.check_call([sys.executable, "-m", "pip", "install", *missing_packages])
+    if hianyzo_csomagok:
+        print(f"Hiányzó csomagok telepítése: {', '.join(hianyzo_csomagok)}")
+        subprocess.check_call([sys.executable, "-m", "pip", "install", *hianyzo_csomagok])
     else:
         print("Minden szükséges csomag telepítve van.")
 else:
@@ -37,28 +37,28 @@ print("Forrás URL-ek beolvasása...")
 with open('forrasok.yaml', 'r') as file:
     data = yaml.safe_load(file)
 
-# Save path definiálása
-save_path = 'raw_data'
+# Mentesi utvonal definiálása
+mentesi_utvonal = 'raw_data'
 
 print("CSV fájlok letöltése...")
 #CSV-k letöltése
 for entry in data['forras']:
     file_id = entry['id']
     url = entry['url']
-    filename = os.path.join(save_path, f"{file_id}.csv")  # CSV fájlok mentése a raw_data almappába
+    filenev = os.path.join(mentesi_utvonal, f"{file_id}.csv")  # CSV fájlok mentése a raw_data almappába
 
     try:
         # GET request küldése a megadott URL-re
-        response = requests.get(url)
+        valasz = requests.get(url)
 
         # CSV mentése
-        with open(filename, 'wb') as file:
-            file.write(response.content)
+        with open(filenev, 'wb') as file:
+            file.write(valasz.content)
 
         # Letöltés után siker- / hibaüzenet kiírása
-        print(f"{filename} letöltve")
+        print(f"{filenev} letöltve")
     except requests.exceptions.RequestException as e:
-        print(f"Hiba történt a {filename} letöltésekor: {e}")
+        print(f"Hiba történt a {filenev} letöltésekor: {e}")
 
 print("CSV fájlok letöltése kész.")
 

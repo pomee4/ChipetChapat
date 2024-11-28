@@ -6,13 +6,7 @@ from app.data_processing.regression_chart_data import osszekapcsolt_adatok, gene
 
 def create_line_chart():
     df = get_line_chart_data()
-    fig, ax = plt.subplots()
-    ax.plot(df['Date'], df['Value'], marker='o', color='b')
-    ax.set_title('Energiafelhasználás Időbeli Alakulása - Vonal Diagram')
-    ax.set_xlabel('Idő')
-    ax.set_ylabel('Érték')
-    fig.savefig('app/static/images/line_chart.png')
-    plt.close(fig)
+
 
 def create_bar_chart():
     df = get_bar_chart_data()
@@ -29,4 +23,5 @@ def create_regression_chart():
         data=osszekapcsolt_adatok,
         x_col=osszekapcsolt_adatok.columns[-2],  # Energiafogyasztás column
         y_col=osszekapcsolt_adatok.columns[-1],  # Gyümölcstermelés column
+        output_path='app/static/images/regression_chart.png'
     )
