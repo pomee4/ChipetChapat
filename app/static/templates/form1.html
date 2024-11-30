@@ -1,15 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hu">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <title>Első Form</title>
+    <title>ChipetChapat Projekt</title>
 </head>
 <body>
-    <h1>Első Form</h1>
-    <img src="{{ url_for('static', filename='images/intro_1.png') }}" alt="Intro 1 kép" width="500" height="500">
-    <p>Ez az első oldal tartalma...</p>
-    <button onclick="window.location.href='/form2'">Következő oldal </button>
+    <header>
+        <h1>ChipetChapat Projekt</h1>
+    </header>
+    <main>
+        <img src="{{ url_for('static', filename='images/intro_1.png') }}" alt="Intro 1 kép" class="intro-image">
+        <h2>A projekt célja</h2>
+        <p>A ChipetChapat projekt célja, hogy vizuálisan elemezhető diagramokat hozzon létre különböző típusú adatok alapján. A webalkalmazás felhasználóbarát felülete gyors és egyszerű adatfeldolgozást kínál.</p>
+        <button onclick="window.location.href='/form2'">Következő oldal</button>
+    </main>
 </body>
 </html>

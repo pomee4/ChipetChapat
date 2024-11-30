@@ -1,15 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hu">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <title>Második Form</title>
+    <title>ChipetChapat Projekt</title>
 </head>
 <body>
-    <h1>Második Form</h1>
-    <img src="{{ url_for('static', filename='images/intro_2.png') }}" alt="Intro 2 kép">
-    <p>Ez a második oldal tartalma...</p>
-    <button onclick="window.location.href='/form3'">Következő oldal </button>
+    <header>
+        <h1>ChipetChapat Projekt</h1>
+    </header>
+    <main>
+        <img src="{{ url_for('static', filename='images/intro_2.png') }}" alt="Intro 2 kép">
+        <h2>A Megjeleníthető Diagramok</h2>
+        <p>
+        A ChipetChapat projekt különböző típusú diagramokat kínál az adatok vizualizálására:
+        </p>
+        <ul class="diagram-list">
+            <li><strong>Vonaldiagramok:</strong> Egy átlagos budapesti háztartás gáz- és villamosenergia-felhasználás alakulásának követése.</li>
+            <li><strong>Oszlopdiagramok:</strong> A levegő országos átlag ózon (o3) koncentróciójának határérték-túllépésének alakulása</li>
+            <li><strong>Regressziós diagramok:</strong> Összefüggés vizsgálata az energiafogyasztás és a gyümölcstermelés közöt, régiónként.</li>
+        </ul>
+        <p>
+            A diagramokhoz felhasznált adatok a KSH oldaláról származnak.
+        </p>
+        <button onclick="window.location.href='/form3'">Tovább a következő oldalra</button>
+    </main>
 </body>
 </html>

@@ -9,7 +9,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 header {
@@ -17,11 +17,45 @@ header {
     color: white;
     padding: 20px;
     text-align: center;
+    width: 100%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 main {
     text-align: center;
-    margin-top: 20px;
+    margin: 20px;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 800px;
+}
+
+h1, h2 {
+    margin: 10px 0;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 20px 0;
+    text-align: left;
+}
+
+.intro-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+.diagram-list {
+    text-align: left; /* Aligns the list items to the left */
+    margin: 20px auto;
+    padding: 0;
+    list-style: none;
+    max-width: 600px;
 }
 
 button {
@@ -31,10 +65,13 @@ button {
     display: inline-block;
     padding: 10px 20px;
     cursor: pointer;
-    font-size: 24px;
+    font-size: 20px;
     border-radius: 10px;
+    border: none;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
 }
 
 button:hover {
-    background-color: grey;
+    background-color: #555;
 }
